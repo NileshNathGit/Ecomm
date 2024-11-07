@@ -21,7 +21,7 @@ public class TC001_AccountRegister {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get("http://localhost/mypage/Your Store.html");
 		driver.manage().window().maximize();
-		
+		//Done?
 	}
 	@AfterClass
 	public void tearDown()
