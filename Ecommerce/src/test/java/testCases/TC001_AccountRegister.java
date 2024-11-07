@@ -19,14 +19,14 @@ public class TC001_AccountRegister {
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		driver.get("http://localhost/mypage/Your Store.html");
+		driver.get("https://tutorialsninja.com/demo");
 		driver.manage().window().maximize();
 		//Done?
 	}
 	@AfterClass
 	public void tearDown()
 	{
-		driver.close();
+//		driver.close();
 	}
 	@Test
 	public void verify_Registration()
@@ -39,7 +39,9 @@ public class TC001_AccountRegister {
 		rp.FirstName("Nilesh");
 		rp.LastName("Nathb");
 		rp.Email("nileshf.nn@gmail.com");
+		rp.phone("98845685");
 		rp.Password("mass@123");
+		rp.confirmPassword("mass@123");
 		rp.Checkprivacypolicy();
 		rp.clickSubmit();
 		

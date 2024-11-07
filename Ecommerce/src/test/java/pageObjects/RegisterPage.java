@@ -2,11 +2,9 @@ package pageObjects;
 
 import java.time.Duration;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.interactions.Actions;
 
@@ -26,6 +24,8 @@ public class RegisterPage extends BasePage{
 
 	@FindBy(xpath="//input[@id='input-lastname']")
 	public WebElement txtLastName;
+	@FindBy(xpath="//input[@name='telephone']")
+	public WebElement txtPhone;
 
 	@FindBy(xpath="//input[@id='input-email']")
 	public WebElement txtEmail;
@@ -36,11 +36,15 @@ public class RegisterPage extends BasePage{
 	@FindBy(xpath="//input[@id='input-password']")
 	public WebElement txtPassword;
 	
+	@FindBy(xpath="//input[@id='input-confirm']")
+	public WebElement txtConfirmPassword;
+	
+	
 	@FindBy(xpath="//input[@name='agree']")
 	public
 	WebElement ckdprivacy;
 	
-	@FindBy(xpath="//button[normalize-space()='Continue']")
+	@FindBy(xpath="//input[@class='btn btn-primary']")
 	public WebElement btnContinue;
 	
 //	Action Methods
@@ -54,6 +58,10 @@ public class RegisterPage extends BasePage{
 	{
 		txtLastName.sendKeys(Lname);
 	}
+	public void phone(String num)
+	{
+		txtPhone.sendKeys(num);
+	}
 	public void Email(String email)
 	{
 		txtEmail.sendKeys(email);
@@ -61,6 +69,10 @@ public class RegisterPage extends BasePage{
 	public void Password(String pass)
 	{
 		txtPassword.sendKeys(pass);
+	}
+	public void confirmPassword(String pass)
+	{
+		txtConfirmPassword.sendKeys(pass);
 	}
 	public void Checkprivacypolicy()
 	{
